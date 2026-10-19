@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ بصمجة ليلة الامتحان: Traumatology & Biomechanics</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --accent-gold: #d97706;
+            --accent-red: #dc2626;
+            --accent-green: #059669;
+            --bg-page: #0f172a;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --badge-bg: #312e81;
+            --badge-text: #c7d2fe;
+            --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', system-ui, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding-bottom: 70px;
+        }
+
+        /* Top Sticky Bar */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 12px 20px;
+        }
+
+        .bar-inner {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .bar-title {
+            font-weight: 900;
+            font-size: 1.15rem;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-input {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            background: #1e293b;
+            color: white;
+            font-family: inherit;
+            font-size: 0.88rem;
+            width: 220px;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #fbbf24;
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+            width: 270px;
+        }
+
+        .btn-link {
+            background: #2563eb;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.86rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+
+        .btn-link:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .btn-print {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.86rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+
+        .btn-print:hover {
+            background: #047857;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1050px;
+            margin: 24px auto 0;
+            padding: 0 16px;
+        }
+
+        /* Hero */
+        .hero-banner {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #b45309 100%);
+            border: 1px solid #4338ca;
+            border-radius: 20px;
+            padding: 32px 28px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            background: #fbbf24;
+            color: #0f172a;
+            font-weight: 900;
+            font-size: 0.82rem;
+            padding: 3px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.1rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-banner p {
+            font-size: 1.02rem;
+            color: #e0e7ff;
+            max-width: 850px;
+        }
+
+        /* Quick Navigation Grid */
+        .quick-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .nav-chip {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 12px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-chip:hover {
+            border-color: #fbbf24;
+            background: #273549;
+            transform: translateY(-2px);
+            color: #fbbf24;
+        }
+
+        /* Card Section */
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 26px 24px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--card-border);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .title-gold { color: #fbbf24; }
+        .title-red { color: #f87171; }
+        .title-green { color: #34d399; }
+        .title-blue { color: #60a5fa; }
+        .title-purple { color: #a78bfa; }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+        }
+
+        .basmaga-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            background: #0f172a;
+        }
+
+        .basmaga-table th, .basmaga-table td {
+            padding: 12px 14px;
+            text-align: right;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .basmaga-table th {
+            background: #1e293b;
+            color: #fbbf24;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .basmaga-table tr:hover {
+            background: #1e293b;
+        }
+
+        .trigger-tag {
+            font-family: 'Inter', sans-serif;
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: inline-block;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            direction: ltr;
+            text-align: left;
+        }
+
+        .answer-tag {
+            font-family: 'Inter', 'Cairo', sans-serif;
+            background: rgba(16, 185, 129, 0.18);
+            color: #6ee7b7;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.92rem;
+            display: inline-block;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+
+        .num-badge {
+            font-family: 'JetBrains Mono', monospace;
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 900;
+            font-size: 0.92rem;
+            display: inline-block;
+        }
+
+        /* Comparison Grids */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 16px;
+        }
+
+        .comp-box {
+            background: #0f172a;
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 16px 18px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .comp-box-header {
+            font-weight: 900;
+            font-size: 1.05rem;
+            color: #93c5fd;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed var(--card-border);
+        }
+
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comp-row:last-child {
+            border-bottom: none;
+        }
+
+        /* Why Cards */
+        .why-card {
+            background: #0f172a;
+            border-right: 4px solid #fbbf24;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            border: 1px solid var(--card-border);
+            border-right-width: 4px;
+            border-right-color: #fbbf24;
+        }
+
+        .why-q {
+            font-weight: 800;
+            font-size: 0.98rem;
+            color: #fbbf24;
+            margin-bottom: 6px;
+        }
+
+        .why-a {
+            font-size: 0.92rem;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        /* Image Clues */
+        .image-clue-card {
+            background: #0f172a;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .clue-badge {
+            background: #4338ca;
+            color: white;
+            font-weight: 900;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .clue-body h4 {
+            font-size: 0.98rem;
+            color: #60a5fa;
+            margin-bottom: 4px;
+        }
+
+        .clue-body p {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+            }
+            .top-bar, .quick-nav, .search-input, .btn-print, .btn-link {
+                display: none !important;
+            }
+            .container {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .hero-banner {
+                background: #1e3a8a !important;
+                color: white !important;
+                border-radius: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .section-card {
+                background: white !important;
+                color: black !important;
+                border: 1px solid #999 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                margin-bottom: 20px !important;
+            }
+            .basmaga-table {
+                background: white !important;
+                color: black !important;
+            }
+            .basmaga-table th {
+                background: #eee !important;
+                color: black !important;
+            }
+            .basmaga-table td {
+                border-bottom: 1px solid #ccc !important;
+            }
+            .trigger-tag, .answer-tag, .num-badge {
+                border: 1px solid #888 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <header class="top-bar">
+        <div class="bar-inner">
+            <div class="bar-title">
+                <span>⚡</span>
+                <span>بصمجة ليلة الامتحان | Traumatology & Biomechanics</span>
+            </div>
+            <div class="bar-actions">
+                <input type="text" id="filterInput" class="search-input" placeholder="🔍 ابحث في مفاتيح الحل والأرقام...">
+                <a href="index.html" class="btn-link">📖 الملزمة الشاملة (58 سلايد)</a>
+                <button class="btn-print" onclick="window.print()">🖨️ طباعة الورقة (PDF)</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Header -->
+        <div class="hero-banner">
+            <span class="hero-badge">PT EXAM CHEAT SHEET • كبسولة الميد والفاينال</span>
+            <h1>بصمجة مادة الإصابات والبيوميكانيكا (Traumatology)</h1>
+            <p>ورقة المفاهيم السريعة المركزة بنسبة 100%: مفاتيح أسئلة الـ MCQs الخاطفة (Trigger ➔ Answer)، جدول الأرقام والنسب المحفوظة صم، المقارنات الثنائية الحتمية، أسئلة علل (Why)، وبصمجة صور الأشعة في كلمة واحدة.</p>
+        </div>
+
+        <!-- Quick Jump Chips -->
+        <nav class="quick-nav">
+            <a href="#triggers" class="nav-chip">🎯 مفاتيح الـ MCQ السريعة</a>
+            <a href="#numbers" class="nav-chip">🔢 الأرقام والنسب الذهبية</a>
+            <a href="#comparisons" class="nav-chip">⚖️ المقارنات الثنائية الكبرى</a>
+            <a href="#why" class="nav-chip">❓ أهم أسئلة علل (Why)</a>
+            <a href="#radiology" class="nav-chip">☢️ بصمجة الأشعات بكلمة</a>
+        </nav>
+
+        <!-- ============================================== -->
+        <!-- 1. مفاتيح الحل السريعة (MCQ TRIGGERS) -->
+        <!-- ============================================== -->
+        <section id="triggers" class="section-card">
+            <div class="section-header">
+                <div class="section-title title-gold">
+                    <span>🎯</span>
+                    <span>1. بنك مفاتيح الحل والـ MCQ السريع (أول ما تلمح الكلمة دي ➔ اختار دي)</span>
+                </div>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">22 مفتاح ذهبي</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="basmaga-table" id="triggersTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th style="width: 45%;">كلمة السر في رأس السؤال (Trigger)</th>
+                            <th style="width: 30%;">الإجابة الفورية المباشرة (Answer)</th>
+                            <th style="width: 20%;">تريكة الامتحان</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="trigger-tag">Interruption in continuity of bone</span></td>
+                            <td><span class="answer-tag">Fracture</span></td>
+                            <td>سواء كان Complete أو Incomplete</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="trigger-tag">Occurs in children + bend without fracturing</span></td>
+                            <td><span class="answer-tag">Greenstick fracture</span></td>
+                            <td>بسبب مرونة العظام وغناها بالكولاجين</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="trigger-tag">Traction + fragment torn off by tendon/ligament</span></td>
+                            <td><span class="answer-tag">Avulsion fracture</span></td>
+                            <td>ناتج عن قوى الشد (Tensile force)</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="trigger-tag">Twisting movements + violence from distance</span></td>
+                            <td><span class="answer-tag">Spiral & Oblique fractures</span></td>
+                            <td>عنف غير مباشر (Indirect violence)</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="trigger-tag">Torsion about an axis</span></td>
+                            <td><span class="answer-tag">Spiral fracture</span></td>
+                            <td>الالتواء = حلزوني لولبي دائماً</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><span class="trigger-tag">Directly applied force to fracture site</span></td>
+                            <td><span class="answer-tag">Transverse fracture</span></td>
+                            <td>خط الكسر عمودي 90 درجة مع المحور</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><span class="trigger-tag">More than two bone pieces + High energy</span></td>
+                            <td><span class="answer-tag">Comminuted fracture</span></td>
+                            <td>تفتت كامل لشظايا متعددة</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><span class="trigger-tag">Mild trauma + abnormal/diseased bone (Carcinoma)</span></td>
+                            <td><span class="answer-tag">Pathological fracture</span></td>
+                            <td>صدمة تافهة على عظم متآكل بورم أو عدوى</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><span class="trigger-tag">Abnormal stress on normal bone</span></td>
+                            <td><span class="answer-tag">Fatigue fracture</span></td>
+                            <td>في العدائين والمجندين (March fracture)</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="trigger-tag">Normal stress on abnormal bone</span></td>
+                            <td><span class="answer-tag">Insufficiency fracture</span></td>
+                            <td>في كبار السن ومرضى هشاشة العظام</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="trigger-tag">Bending: which side fails first?</span></td>
+                            <td><span class="answer-tag">Convex side</span></td>
+                            <td>لأنه يقع تحت الشد والعظم أضعف في الشد</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="trigger-tag">Bending: Concave side force & pattern</span></td>
+                            <td><span class="answer-tag">Compression ➔ Butterfly #</span></td>
+                            <td>الجانب المقعر ينتج قطعة الفراشة المثلثة</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="trigger-tag">Behavior varies with direction of load</span></td>
+                            <td><span class="answer-tag">Anisotropic</span></td>
+                            <td>العظم أقوى طولياً وأضعف عرضياً</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><span class="trigger-tag">Stiffer & higher load to failure at higher rate</span></td>
+                            <td><span class="answer-tag">Viscoelasticity (Rate dependence)</span></td>
+                            <td>تغير سلوك العظم مع سرعة التحميل</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><span class="trigger-tag">Lower load held for long time ➔ High strain</span></td>
+                            <td><span class="answer-tag">Creep</span></td>
+                            <td>الزحف والتشوه مع ثبات الحمل عبر الزمن</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><span class="trigger-tag">Bone fragments do NOT pierce skin</span></td>
+                            <td><span class="answer-tag">Simple (Closed) fracture</span></td>
+                            <td>الجلد سليم والتلوث منعدم</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td><span class="trigger-tag">Soft tissue damage + fragments pierce skin</span></td>
+                            <td><span class="answer-tag">Compound (Open) fracture</span></td>
+                            <td>جرح مفتوح وخطر عدوى شديد</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td><span class="trigger-tag">Bone fragment pierces skin from inside out</span></td>
+                            <td><span class="answer-tag">Open from within</span></td>
+                            <td>العظمة هي التي طعنت الجلد والجرح أنظف</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td><span class="trigger-tag">Fragments in almost anatomical position</span></td>
+                            <td><span class="answer-tag">Un-displaced fracture</span></td>
+                            <td>Manipulative reduction is NOT required</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><span class="trigger-tag">Muscle pull causes which displacement?</span></td>
+                            <td><span class="answer-tag">Overlap displacement (Shortening)</span></td>
+                            <td>تشنج العضلات يركب العظام فوق بعضها</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td><span class="trigger-tag">Most common fracture before 75 years</span></td>
+                            <td><span class="answer-tag">Wrist fracture (Colles')</span></td>
+                            <td>السقوط على اليد المفرودة</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td><span class="trigger-tag">Most common fracture after 75 years</span></td>
+                            <td><span class="answer-tag">Hip fractures</span></td>
+                            <td>كسور عنق الفخذ نتيجة الهشاشة وبطء التوازن</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 2. جدول الأرقام والنسب الذهبية (GOLDEN NUMBERS) -->
+        <!-- ============================================== -->
+        <section id="numbers" class="section-card">
+            <div class="section-header">
+                <div class="section-title title-green">
+                    <span>🔢</span>
+                    <span>2. جدول الأرقام والنسب المحفوظة صم (Golden Numbers Matrix)</span>
+                </div>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">أرقام لا يخلو منها امتحان</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="basmaga-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">الرقم / النسبة</th>
+                            <th style="width: 45%;">البيان العلمي في المحاضرة</th>
+                            <th style="width: 30%;">ملاحظة البصمجة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="num-badge">16.8 kg/mm²</span></td>
+                            <td>مقاومة العظم المصمت لقوى الضغط (Compression resistance)</td>
+                            <td><strong>الأقوى دائماً</strong> في مقاومة العظام</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">12.4 kg/mm²</span></td>
+                            <td>مقاومة العظم المصمت لقوى الشد (Tensile resistance)</td>
+                            <td>أضعف بنحو 26% من مقاومة الضغط</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">15 - 20 %</span></td>
+                            <td>نسبة النسيج الضام من الوزن الإجمالي للجسم (Total body weight)</td>
+                            <td>رقم إحصائي في سلايد 6</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">20 - 25 %</span></td>
+                            <td>نسبة تخزين الماء في النسيج الضام (Total water content)</td>
+                            <td>مسؤول عن لزوجة ومرونة الأنسجة</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">30 - 40 %</span></td>
+                            <td>الجزء العضوي في العظام (Organic component)</td>
+                            <td>مسؤول عن <strong>Flexibility</strong> (كولاجين وخلايا)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">60 - 70 %</span></td>
+                            <td>الجزء غير العضوي في العظام (Inorganic component)</td>
+                            <td>مسؤول عن <strong>Strength & Toughness</strong> (كالسيوم وفوسفات)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">8 %</span></td>
+                            <td>نسبة الماء داخل الجزء العضوي للعظام</td>
+                            <td>مذكورة نصاً في سلايد 9</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">5 - 10 %</span></td>
+                            <td>صلابة العظم الإسفنجي مقارنة بالعظم المصمت (Stiffness ratio)</td>
+                            <td>العظم الإسفنجي أقل صلابة بكثير</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">5 Times</span></td>
+                            <td>مطيلية وتشكل العظم الإسفنجي مقارنة بالمصمت (Ductility)</td>
+                            <td>يمط ويتشكل 5 أضعاف قبل أن ينكسر</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">45 Years</span></td>
+                            <td>السن الفاصل: قبلها الكسر أكثر في الرجال، بعدها أكثر في النساء</td>
+                            <td>بسبب هشاشة العظام بعد انقطاع الطمث</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">75 Years</span></td>
+                            <td>السن الفاصل: قبلها كسر الرسغ (Colles)، بعدها كسر الورك (Hip)</td>
+                            <td>أهم إحصائية سريرية في المحاضرة</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">3 Causes</span></td>
+                            <td>أسباب الإزاحة الثلاثة: External force, Muscle pull, Gravity</td>
+                            <td>سؤال تعداد كلاسيكي</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">4 Types</span></td>
+                            <td>أنواع الإزاحة الأربعة: Overlap, Side, Angulation, Rotational</td>
+                            <td>أنماط التشوه الهندسي</td>
+                        </tr>
+                        <tr>
+                            <td><span class="num-badge">6 Shapes</span></td>
+                            <td>أشكال الكسور الستة: Transverse, Oblique, Spiral, Comminuted, Crush, Greenstick</td>
+                            <td>تصنيف الأشكال الهندسية</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 3. المقارنات الثنائية الكبرى (BIG COMPARISONS) -->
+        <!-- ============================================== -->
+        <section id="comparisons" class="section-card">
+            <div class="section-header">
+                <div class="section-title title-blue">
+                    <span>⚖️</span>
+                    <span>3. المقارنات الثنائية الكبرى (The Big 6 Comparisons)</span>
+                </div>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">تجميعات أسئلة (Compare between)</span>
+            </div>
+
+            <div class="comp-grid">
+                <!-- Comp 1 -->
+                <div class="comp-box">
+                    <div class="comp-box-header">1. Cortical Bone vs Cancellous Bone</div>
+                    <div class="comp-row"><span>الموقع:</span><span>Shaft (Diaphysis) vs Ends (Epiphysis)</span></div>
+                    <div class="comp-row"><span>الصلابة (Stiffness):</span><span style="color:#60a5fa;">Cortical 훨씬 Stiffer (100% vs 5-10%)</span></div>
+                    <div class="comp-row"><span>المطيلية (Ductility):</span><span style="color:#34d399;">Cancellous 5 أضعاف الكورتيكال</span></div>
+                    <div class="comp-row"><span>الوظيفة الأساسية:</span><span>Weight bearing vs Shock absorbing</span></div>
+                </div>
+
+                <!-- Comp 2 -->
+                <div class="comp-box">
+                    <div class="comp-box-header">2. Compression vs Tensile Forces</div>
+                    <div class="comp-row"><span>اتجاه القوة:</span><span>متجهة للداخل vs متجهة للخارج (Distraction)</span></div>
+                    <div class="comp-row"><span>نوع الانفعال (Strain):</span><span>Shortening & Widening vs Lengthening & Narrowing</span></div>
+                    <div class="comp-row"><span>مقاومة العظم:</span><span style="color:#fbbf24;">16.8 kg/mm² (أقوى) vs 12.4 kg/mm² (أضعف)</span></div>
+                    <div class="comp-row"><span>الكسر النموذجي:</span><span>Vertebra compression vs Avulsion fracture</span></div>
+                </div>
+
+                <!-- Comp 3 -->
+                <div class="comp-box">
+                    <div class="comp-box-header">3. Direct Violence vs Indirect Violence</div>
+                    <div class="comp-row"><span>مكان تطبيق القوة:</span><span>في موقع الكسر نفسه vs بعيداً عن موقع الكسر</span></div>
+                    <div class="comp-row"><span>آلية الحركة:</span><span>Direct blow (ضربة/إكصدام) vs Twisting (التواء ممتد)</span></div>
+                    <div class="comp-row"><span>أشكال الكسور:</span><span>Transverse / Comminuted vs Spiral / Oblique</span></div>
+                    <div class="comp-row"><span>حالة الجلد المحيط:</span><span>كدمات وجروح مفتوحة vs سليم غالباً مع تمزق أربطة</span></div>
+                </div>
+
+                <!-- Comp 4 -->
+                <div class="comp-box">
+                    <div class="comp-box-header">4. Open from Within vs Open from Without</div>
+                    <div class="comp-row"><span>الفاعل:</span><span>طرف العظم الحاد يطعن الجلد vs الجسم الخارجي يمزق الجلد</span></div>
+                    <div class="comp-row"><span>حجم وطبيعة الجرح:</span><span>شق صغير ونظيف نسبياً vs جرح متهتك واسع بفقدان أنسجة</span></div>
+                    <div class="comp-row"><span>خطر العدوى والتلوث:</span><span style="color:#f87171;">قليل نسبياً vs فائق الخطورة والتلوث</span></div>
+                </div>
+
+                <!-- Comp 5 -->
+                <div class="comp-box">
+                    <div class="comp-box-header">5. Fatigue Fracture vs Insufficiency Fracture</div>
+                    <div class="comp-row"><span>طبيعة الحمل (Stress):</span><span style="color:#f87171;">Abnormal stress vs Normal stress</span></div>
+                    <div class="comp-row"><span>حالة العظم (Bone):</span><span style="color:#34d399;">Normal bone vs Abnormal/Diseased bone</span></div>
+                    <div class="comp-row"><span>الفئة المستهدفة:</span><span>الرياضيون والمجندون vs المسنون ومرضى هشاشة العظام</span></div>
+                </div>
+
+                <!-- Comp 6 -->
+                <div class="comp-box">
+                    <div class="comp-box-header">6. Un-displaced vs Displaced Fractures</div>
+                    <div class="comp-row"><span>محاذاة العظم:</span><span>Almost anatomical position vs فقدان كامل للمحاذاة</span></div>
+                    <div class="comp-row"><span>الحاجة للرد (Reduction):</span><span style="color:#34d399;">NOT required vs إلزامي بالرد والتثبيت</span></div>
+                    <div class="comp-row"><span>طريقة العلاج:</span><span>جبس تحفظي بسيط vs شريحة ومسامير أو مسمار نخاعي</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 4. أهم أسئلة علل (WHY & GIVE REASONS) -->
+        <!-- ============================================== -->
+        <section id="why" class="section-card">
+            <div class="section-header">
+                <div class="section-title title-purple">
+                    <span>❓</span>
+                    <span>4. بصمجة أسئلة "علل" و (Why?) الأكثر تكراراً</span>
+                </div>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">إجابات نموذجية مختصرة</span>
+            </div>
+
+            <div class="why-card">
+                <div class="why-q">1. Why is trabecular (cancellous) bone shock absorbing? (سلايد 10)</div>
+                <div class="why-a"><strong>الإجابة:</strong> Because of its <strong>porous 3D trabecular architectural lattice</strong>, which deforms and yields elastically under impact loads, dissipating energy and protecting articular cartilage.</div>
+            </div>
+
+            <div class="why-card">
+                <div class="why-q">2. Why does bone fail and fracture on the CONVEX side during bending? (سلايد 25)</div>
+                <div class="why-a"><strong>الإجابة:</strong> Because during bending, the convex side is subjected to <strong>Tensile forces</strong>, and bone has <strong>lower ultimate strength in tension</strong> (12.4 kg/mm²) than in compression (16.8 kg/mm²).</div>
+            </div>
+
+            <div class="why-card">
+                <div class="why-q">3. Why is tensile force called a "distraction force"? (سلايد 22)</div>
+                <div class="why-a"><strong>الإجابة:</strong> Because the <strong>intermolecular resistance decreases</strong> more than in compressive force, pulling molecules apart.</div>
+            </div>
+
+            <div class="why-card">
+                <div class="why-q">4. Why are long bones stronger in longitudinal direction than transverse direction? (سلايد 19)</div>
+                <div class="why-a"><strong>الإجابة:</strong> Due to their <strong>Anisotropic nature</strong>; they are <strong>habitually and physiologically loaded</strong> in the longitudinal direction during weight bearing.</div>
+            </div>
+
+            <div class="why-card">
+                <div class="why-q">5. Why does overly mineralized bone fracture easily upon impact? (سلايد 15)</div>
+                <div class="why-a"><strong>الإجابة:</strong> Because excessive mineralization makes bone <strong>Brittle</strong>; it loses its organic flexibility and does not give or deform during impact loading.</div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 5. بصمجة الأشعات بكلمة واحدة (RADIOLOGY CLUES) -->
+        <!-- ============================================== -->
+        <section id="radiology" class="section-card">
+            <div class="section-header">
+                <div class="section-title title-red">
+                    <span>☢️</span>
+                    <span>5. بصمجة الأشعات والرسومات في كلمة واحدة (1-Second Radiology Clues)</span>
+                </div>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">التعرف الفوري على صور السلايدات</span>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 23</span>
+                <div class="clue-body">
+                    <h4>رسم فقرات العمود الفقري المضغوطة</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Vertebral compression fracture</span> (هبوط وقصر جسم الفقرة تحت قوى الضغط المحوري).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 24 & 49</span>
+                <div class="clue-body">
+                    <h4>أشعة كوع موسومة بـ BT تظهر قطعة عظمية طافية إنسياً</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Avulsion fracture of medial epicondyle</span> (اقتلاع اللقيمة بسحب عضلات الرمي السريع).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 26</span>
+                <div class="clue-body">
+                    <h4>رسم فخذ مائل مع قطعة مثلثة بارزة</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Oblique bending fracture with butterfly fragment</span> (كسر الانحناء مع قطعة الفراشة).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 27</span>
+                <div class="clue-body">
+                    <h4>رسم حاسوبي أصفر وأزرق بدعامتين سفليتين وحمل وسطي</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Three-points bending fracture</span> (نموذج انحناء النقاط الثلاث).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 28</span>
+                <div class="clue-body">
+                    <h4>عظمة ساق يلتف حولها خط حلزوني أسود مع سهمين دائريين</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Spiral fracture due to Torsion</span> (كسر حلزوني ناتج عن الالتواء).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 32</span>
+                <div class="clue-body">
+                    <h4>راكب سيارة ترتطم ركبته بالتابلوه مع 3 أسهم حمراء</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Dashboard injury / Transmission of energy</span> (كسر الصابونة والفخذ وخلع الورك الخلفي).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 35</span>
+                <div class="clue-body">
+                    <h4>أشعة حقيقية لكسر فاصل في منتصف الذراع (Figure 4.6)</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Complete fracture of shaft of humerus</span> (كسر كامل لمنتصف العضد).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 46</span>
+                <div class="clue-body">
+                    <h4>أشعة سينية لعظمة متفتتة لشظايا متناثرة بيضاء</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Comminuted fracture</span> (كسر متفتت نتيجة صدمة طاقة عالية High-energy).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 47</span>
+                <div class="clue-body">
+                    <h4>أشعة لساعد طفل تظهر انحناء العظم وشق في جانب واحد</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Greenstick fracture</span> (كسر الغصن الأخضر في الأطفال).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 48</span>
+                <div class="clue-body">
+                    <h4>أشعة حوض تظهر تآكلاً وفجوة داكنة في رأس وعنق الفخذ</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Pathological fracture due to metastasis erosion</span> (كسر مرضي بنقائل سرطانية).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 51</span>
+                <div class="clue-body">
+                    <h4>أشعة ورك موسومة بـ BT تظهر خطاً أبيض متداخلاً كثيفاً</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Impacted fracture of femoral neck</span> (كسر منحشر في عنق عظمة الفخذ).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 54</span>
+                <div class="clue-body">
+                    <h4>أشعة جانبية للساعد تظهر خط كسر في الزند في موضعه المستقيم</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Undisplaced fracture of midshaft of ulna</span> (كسر غير مزاح في منتصف الزند).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 55</span>
+                <div class="clue-body">
+                    <h4>صورتان A و B لرسغ شاب عمره 20 سنة مع شرخ دقيق في الزورق</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Undisplaced scaphoid waist fracture</span> (كسر خصر العظمة الزورقية غير المزاح).</p>
+                </div>
+            </div>
+
+            <div class="image-clue-card">
+                <span class="clue-badge">سلايد 56</span>
+                <div class="clue-body">
+                    <h4>أشعة كتف تظهر انفصال وتباعد حاد لطرفي عظمة العضد العلوية</h4>
+                    <p><strong>التشخيص السريع:</strong> ➔ <span class="answer-tag">Displaced fracture of proximal humeral shaft</span> (كسر مزاح شديد في أعلى العضد).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.9rem;">
+            <p>⚡ كبسولة البصمجة السريعة • مادة Traumatology & Biomechanics • د. منى سليم</p>
+            <p style="margin-top: 4px;">مخصصة لطلبة كلية العلاج الطبيعي للمراجعة النهائية ليلة الامتحان</p>
+        </footer>
+
+    </div><!-- /.container -->
+
+    <script>
+        // Live Search Filter for Triggers and Clues
+        const filterInput = document.getElementById('filterInput');
+        if(filterInput) {
+            filterInput.addEventListener('input', function() {
+                const q = this.value.toLowerCase().trim();
+                
+                // Filter Triggers Table Rows
+                const rows = document.querySelectorAll('#triggersTable tbody tr');
+                rows.forEach(r => {
+                    const text = r.innerText.toLowerCase();
+                    r.style.display = text.includes(q) ? '' : 'none';
+                });
+
+                // Filter Cards
+                const cards = document.querySelectorAll('.image-clue-card, .why-card, .comp-box');
+                cards.forEach(c => {
+                    const text = c.innerText.toLowerCase();
+                    c.style.display = text.includes(q) ? '' : 'none';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
